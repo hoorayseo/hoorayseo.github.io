@@ -1,0 +1,398 @@
+<!DOCTYPE html>
+<html lang="zh-Hant">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SEO優化服務 - HooraySEO</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <style>
+        :root {
+            --primary-color: #4CAF50;
+            --secondary-color: #81C784;
+            --light-color: #E8F5E9;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: "Microsoft JhengHei", sans-serif;
+            line-height: 1.6;
+        }
+
+        .header {
+            background-color: white;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+            position: fixed;
+            width: 100%;
+            top: 0;
+            z-index: 1000;
+        }
+
+        .nav-container {
+            padding: 1rem;
+        }
+
+        .nav-wrapper {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .logo {
+            font-size: 1.5rem;
+            font-weight: bold;
+            color: var(--primary-color);
+        }
+
+        .nav-links {
+            display: flex;
+            gap: 2rem;
+        }
+
+        .nav-links a {
+            text-decoration: none;
+            color: #333;
+            font-weight: 500;
+            transition: color 0.3s;
+        }
+
+        .nav-links a:hover {
+            color: var(--primary-color);
+        }
+
+        .hamburger {
+            display: none;
+            flex-direction: column;
+            cursor: pointer;
+            padding: 5px;
+        }
+
+        .hamburger span {
+            width: 25px;
+            height: 3px;
+            background-color: var(--primary-color);
+            margin: 2px 0;
+            transition: 0.3s;
+        }
+
+        .page-hero {
+            background-color: var(--light-color);
+            padding: 8rem 2rem 4rem;
+            text-align: center;
+        }
+
+        .page-hero h1 {
+            font-size: 2.5rem;
+            color: #333;
+            margin-bottom: 1.5rem;
+        }
+
+        .page-hero p {
+            font-size: 1.2rem;
+            color: #666;
+            max-width: 800px;
+            margin: 0 auto;
+        }
+
+        .services {
+            max-width: 1200px;
+            margin: 4rem auto;
+            padding: 0 2rem;
+        }
+
+        .service-category {
+            margin-bottom: 3rem;
+            padding: 2rem;
+            background: white;
+            border-radius: 10px;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+        }
+
+        .service-category h2 {
+            color: var(--primary-color);
+            margin-bottom: 1.5rem;
+            font-size: 1.8rem;
+        }
+
+        .service-list {
+            list-style: none;
+        }
+
+        .service-list li {
+            margin: 1rem 0;
+            padding-left: 1.5rem;
+            position: relative;
+        }
+
+        .service-list li:before {
+            content: "•";
+            color: var(--primary-color);
+            position: absolute;
+            left: 0;
+        }
+
+        .benefits {
+            background: var(--light-color);
+            padding: 4rem 2rem;
+        }
+
+        .benefits-container {
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .benefits h2 {
+            text-align: center;
+            margin-bottom: 2rem;
+            color: #333;
+        }
+
+        .benefits-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 2rem;
+        }
+
+        .benefit-item {
+            background: white;
+            padding: 1.5rem;
+            border-radius: 8px;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+        }
+
+        .consultation {
+            max-width: 800px;
+            margin: 4rem auto;
+            padding: 2rem;
+            text-align: center;
+        }
+
+        .consultation h2 {
+            color: var(--primary-color);
+            margin-bottom: 1.5rem;
+        }
+
+        .consultation-list {
+            text-align: left;
+            max-width: 400px;
+            margin: 2rem auto;
+            list-style: none;
+        }
+
+        .consultation-list li {
+            margin: 0.5rem 0;
+            padding-left: 1.5rem;
+            position: relative;
+        }
+
+        .consultation-list li:before {
+            content: "✓";
+            color: var(--primary-color);
+            position: absolute;
+            left: 0;
+        }
+
+        .cta-button {
+            display: inline-block;
+            padding: 1rem 2rem;
+            background-color: var(--primary-color);
+            color: white;
+            text-decoration: none;
+            border-radius: 5px;
+            margin-top: 2rem;
+            transition: background-color 0.3s;
+        }
+
+        .cta-button:hover {
+            background-color: var(--secondary-color);
+        }
+
+        @media (max-width: 768px) {
+            .hamburger {
+                display: flex;
+                z-index: 1001;
+            }
+
+            .nav-links {
+                display: none;
+                position: absolute;
+                top: 70px;
+                left: 0;
+                width: 100%;
+                background: white;
+                padding: 1rem;
+                box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+            }
+
+            .nav-links.active {
+                display: flex;
+                flex-direction: column;
+                text-align: center;
+                gap: 1rem;
+            }
+
+            .hamburger.active span:nth-child(1) {
+                transform: rotate(45deg) translate(5px, 5px);
+            }
+
+            .hamburger.active span:nth-child(2) {
+                opacity: 0;
+            }
+
+            .hamburger.active span:nth-child(3) {
+                transform: rotate(-45deg) translate(5px, -5px);
+            }
+        }
+ .page-hero {
+        background-color: var(--light-color);
+        padding: 8rem 2rem 4rem;
+        text-align: center;
+        position: relative;
+        overflow: hidden;
+    }
+
+    .page-hero-content {
+        position: relative;
+        z-index: 2;
+    }
+
+    .page-hero-image {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        opacity: 0.3; /* 調整透明度使文字更容易閱讀 */
+        z-index: 1;
+    }
+    </style>
+</head>
+<body>
+    <header class="header">
+        <nav class="nav-container">
+            <div class="nav-wrapper">
+                <div class="logo">HooraySEO</div>
+                <div class="hamburger">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </div>
+                <div class="nav-links">
+ 	<a href="https://hoorayseo.com.hk/" target="_blank">HooraySEO</a>
+                <a href="index.html">SEO公司</a>
+                <a href="web-design.html">網頁設計</a>
+                <a href="seo.html">SEO服務</a>
+                </div>
+            </div>
+        </nav>
+    </header>
+
+    <section class="page-hero">
+<img src="seo-services.jpg" alt="seo服務" class="page-hero-image">
+    <div class="page-hero-content">
+       <a href="https://hoorayseo.com.hk/seo-services/" target="_blank"><h1> SEO優化服務</h1></a>
+</div>
+        <p>讓您的企業在搜尋引擎中脫穎而出，打造持續性的自然流量</p>
+    </section>
+
+    <section class="services">
+        <div class="service-category">
+            <h2>網站SEO</h2>
+            <ul class="service-list">
+                <li>全方位的網站結構優化</li>
+                <li>精準的關鍵字研究和布局</li>
+                <li>高質量的SEO文章撰寫</li>
+                <li>完整的技術性優化</li>
+                <li>有效的外部連結建設</li>
+            </ul>
+        </div>
+
+        <div class="service-category">
+            <h2>本地商家SEO</h2>
+            <ul class="service-list">
+                <li>Google商家檔案完整設置</li>
+                <li>本地搜尋優化策略</li>
+                <li>商家評論管理</li>
+                <li>地圖搜尋優化</li>
+            </ul>
+        </div>
+
+        <div class="service-category">
+            <h2>YouTube SEO</h2>
+            <ul class="service-list">
+                <li>影片標題和描述優化</li>
+                <li>觀眾留存率提升策略</li>
+                <li>頻道整體優化</li>
+                <li>影片排名提升技術</li>
+            </ul>
+        </div>
+    </section>
+
+    <section class="benefits">
+        <div class="benefits-container">
+            <h2>投資SEO的效益</h2>
+            <div class="benefits-grid">
+                <div class="benefit-item">
+                    <h3>持續性流量</h3>
+                    <p>建立穩定的自然搜尋流量，降低廣告依賴</p>
+                </div>
+                <div class="benefit-item">
+                    <h3>精準觸及</h3>
+                    <p>觸及真正有需求的目標客群</p>
+                </div>
+                <div class="benefit-item">
+                    <h3>品牌提升</h3>
+                    <p>提升品牌知名度和市場影響力</p>
+                </div>
+                <div class="benefit-item">
+                    <h3>高轉換率</h3>
+                    <p>帶來更高的投資報酬率</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="consultation">
+        <h2>免費SEO諮詢服務</h2>
+        <p>為協助您選擇最適合的SEO方案，我們提供免費的網站分析評估</p>
+        <ul class="consultation-list">
+            <li>網站現況評估</li>
+            <li>關鍵字機會分析</li>
+            <li>競爭對手分析</li>
+            <li>客製化方案建議</li>
+        </ul>
+        <a href="https://hoorayseo.com.hk/seo-services/#book" target="_blank" class="cta-button">立即預約諮詢</a>
+    </section>
+
+    <script>
+        const hamburger = document.querySelector('.hamburger');
+        const navLinks = document.querySelector('.nav-links');
+
+        hamburger.addEventListener('click', () => {
+            hamburger.classList.toggle('active');
+            navLinks.classList.toggle('active');
+        });
+
+        document.querySelectorAll('.nav-links a').forEach(link => {
+            link.addEventListener('click', () => {
+                hamburger.classList.remove('active');
+                navLinks.classList.remove('active');
+            });
+        });
+
+        document.addEventListener('click', (e) => {
+            if (!hamburger.contains(e.target) && !navLinks.contains(e.target)) {
+                hamburger.classList.remove('active');
+                navLinks.classList.remove('active');
+            }
+        });
+    </script>
+</body>
+</html>

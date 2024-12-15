@@ -1,11 +1,333 @@
 <!DOCTYPE html>
-<html>
-  <head>
-    <meta charset="utf-8">
-    <title>HooraySEO</title>
-  </head>
-  <body>
-    <h1>HooraySEO</h1>
-   <a href="https://hoorayseo.com.hk/" target="_blank">Hoorayseo</a>是一間香港SEO公司，為客戶提供全面的網絡推廣和SEO優化服務。
-  </body>
+<html lang="zh-Hant">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>HooraySEO - 專業網頁設計、SEO優化及數碼營銷服務</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <style>
+        :root {
+            --primary-color: #4CAF50;
+            --secondary-color: #81C784;
+            --light-color: #E8F5E9;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: "Microsoft JhengHei", sans-serif;
+            line-height: 1.6;
+        }
+
+        .header {
+            background-color: white;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+            position: fixed;
+            width: 100%;
+            top: 0;
+            z-index: 1000;
+        }
+
+        .nav-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 1rem;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .logo {
+            font-size: 1.5rem;
+            font-weight: bold;
+            color: var(--primary-color);
+        }
+
+        .nav-links {
+            display: flex;
+            gap: 2rem;
+        }
+
+        .nav-links a {
+            text-decoration: none;
+            color: #333;
+            font-weight: 500;
+            transition: color 0.3s;
+        }
+
+        .nav-links a:hover {
+            color: var(--primary-color);
+        }
+
+        .hero {
+            background-color: var(--light-color);
+            padding: 8rem 2rem 4rem;
+            text-align: center;
+        }
+
+        .hero h1 {
+            font-size: 2.5rem;
+            color: #333;
+            margin-bottom: 1rem;
+        }
+
+        .hero p {
+            font-size: 1.2rem;
+            color: #666;
+            max-width: 800px;
+            margin: 0 auto;
+        }
+
+        .services {
+            max-width: 1200px;
+            margin: 4rem auto;
+            padding: 0 2rem;
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+        }
+
+        .service-card {
+            background: white;
+            padding: 2rem;
+            border-radius: 10px;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+        }
+
+        .service-card h3 {
+            color: var(--primary-color);
+            margin-bottom: 1rem;
+        }
+
+        .social-links {
+            background: var(--light-color);
+            padding: 2rem;
+            text-align: center;
+        }
+
+        .social-icons {
+            display: flex;
+            justify-content: center;
+            gap: 1.5rem;
+            margin-top: 1rem;
+        }
+
+        .social-icons a {
+            color: var(--primary-color);
+            font-size: 1.5rem;
+            transition: transform 0.3s;
+        }
+
+        .social-icons a:hover {
+            transform: translateY(-3px);
+        }
+
+        .contact {
+            padding: 2rem;
+            text-align: center;
+            background: #fff;
+        }
+
+        @media (max-width: 768px) {
+            .nav-container {
+                flex-direction: column;
+                gap: 1rem;
+            }
+
+            .nav-links {
+                flex-direction: column;
+                text-align: center;
+                gap: 1rem;
+            }
+
+            .hero {
+                padding: 6rem 1rem 3rem;
+            }
+
+            .hero h1 {
+                font-size: 2rem;
+            }
+        }
+  .hamburger {
+            display: none;
+            flex-direction: column;
+            cursor: pointer;
+            padding: 5px;
+        }
+
+        .hamburger span {
+            width: 25px;
+            height: 3px;
+            background-color: var(--primary-color);
+            margin: 2px 0;
+            transition: 0.3s;
+        }
+
+        @media (max-width: 768px) {
+            .hamburger {
+                display: flex;
+                z-index: 1001;
+            }
+
+            .nav-container {
+                padding: 1rem;
+            }
+
+            .nav-wrapper {
+                display: flex;
+                justify-content: space-between;
+                align-items: center;
+                width: 100%;
+            }
+
+            .nav-links {
+                display: none;
+                position: absolute;
+                top: 70px;
+                left: 0;
+                width: 100%;
+                background: white;
+                padding: 1rem;
+                box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+            }
+
+            .nav-links.active {
+                display: flex;
+                flex-direction: column;
+                text-align: center;
+                gap: 1rem;
+            }
+
+            /* 漢堡選單動畫 */
+            .hamburger.active span:nth-child(1) {
+                transform: rotate(45deg) translate(5px, 5px);
+            }
+
+            .hamburger.active span:nth-child(2) {
+                opacity: 0;
+            }
+
+            .hamburger.active span:nth-child(3) {
+                transform: rotate(-45deg) translate(5px, -5px);
+            }
+        }
+ .page-hero {
+        background-color: var(--light-color);
+        padding: 8rem 2rem 4rem;
+        text-align: center;
+        position: relative;
+        overflow: hidden;
+    }
+
+    .page-hero-content {
+        position: relative;
+        z-index: 2;
+    }
+
+    .page-hero-image {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        opacity: 0.3; /* 調整透明度使文字更容易閱讀 */
+        z-index: 1;
+    }
+    </style>
+</head>
+<body>
+    <header class="header">
+        <nav class="nav-container">
+            <div class="nav-wrapper">
+                <div class="logo">HooraySEO</div>
+                <div class="hamburger">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </div>
+            </div>
+            <div class="nav-links">
+              	<a href="https://hoorayseo.com.hk/" target="_blank">HooraySEO</a>
+                <a href="index.html">SEO公司</a>
+                <a href="web-design.html">網頁設計</a>
+                <a href="seo.html">SEO服務</a>
+            </div>
+        </nav>
+    </header>
+
+    <section class="hero" id="home">
+
+    <div class="page-hero-content">
+        <h1><a href="https://hoorayseo.com.hk/" target="_blank">HooraySEO</a>—網站設計、SEO優化、數碼營銷服務</h1>
+
+</div>
+        <p>HooraySEO您的品牌打造完美數位形象，提供全方位的網站設計和搜尋引擎優化方案</p>
+    </section>
+
+    <section class="services">
+        <div class="service-card">
+            <h3>網站設計服務</h3>
+            <p>提供響應式網站設計、WordPress開發、電商網站建置等服務，為您打造專業的品牌形象。起價僅需HK$1,880。</p>
+        </div>
+        <div class="service-card">
+            <h3>SEO優化服務</h3>
+            <p>專業的搜尋引擎優化團隊，協助您提升網站排名，增加品牌曝光度，帶來持續性的自然流量。</p>
+        </div>
+        <div class="service-card">
+            <h3>數位行銷整合</h3>
+            <p>結合SEO、內容行銷、社群媒體等多元管道，為您建立完整的數位營銷策略。</p>
+        </div>
+    </section>
+
+    <section class="social-links">
+        <h2>關注我們</h2>
+        <div class="social-icons">
+            <a href="https://www.youtube.com/@hoorayseo/" target="_blank"><i class="fab fa-youtube"></i></a>
+            <a href="https://www.facebook.com/Hoorayseo/" target="_blank"><i class="fab fa-facebook"></i></a>
+            <a href="https://www.instagram.com/hoorayseo" target="_blank"><i class="fab fa-instagram"></i></a>
+            <a href="https://www.threads.net/@hoorayseo" target="_blank">threads</i></a>
+            <a href="https://www.reddit.com/user/hoorayse-o/" target="_blank"><i class="fab fa-reddit"></i></a>
+            <a href="https://twitter.com/hoorayseo" target="_blank"><i class="fab fa-twitter"></i></a>
+ 
+        </div>
+    </section>
+
+    <section class="contact">
+        <h2>聯絡我們</h2>
+        <p>電話：+852 5232 6609</p>
+        <p>電郵：contact@hoorayseo.com.hk</p>
+        <p>WhatsApp：+852 5232 6609</p>
+    </section>
+  <script>
+        const hamburger = document.querySelector('.hamburger');
+        const navLinks = document.querySelector('.nav-links');
+
+        hamburger.addEventListener('click', () => {
+            hamburger.classList.toggle('active');
+            navLinks.classList.toggle('active');
+        });
+
+        // 點擊導航連結時關閉選單
+        document.querySelectorAll('.nav-links a').forEach(link => {
+            link.addEventListener('click', () => {
+                hamburger.classList.remove('active');
+                navLinks.classList.remove('active');
+            });
+        });
+
+        // 點擊頁面其他地方時關閉選單
+        document.addEventListener('click', (e) => {
+            if (!hamburger.contains(e.target) && !navLinks.contains(e.target)) {
+                hamburger.classList.remove('active');
+                navLinks.classList.remove('active');
+            }
+        });
+    </script>
+<img src="seo-company.jpg" alt="seo公司" >
+</body>
 </html>
